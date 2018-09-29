@@ -13,8 +13,8 @@ notify:
     platform: fcm-android
 ```
 
-3.  Reboot Home Assistant.
-4.  Enter Ariela application, go to settings and enable Firebase notifications
+4.  Reboot Home Assistant.
+5.  Enter Ariela application, go to settings and enable Firebase notifications
 
 ## Usage
 #### Sending the notification
