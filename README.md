@@ -2,10 +2,8 @@
 Android actionable notifications for Home Assistant.
 This code is based from https://github.com/Crewski/HANotify
 ## Setup
-1.  If you have free version of Ariela use fcm-android.py script from arielafree directory
-    If you have PRO version of Ariela use fcm-android.py script from arielapro directory
-2.  Copy the fcm-android.py file into your /custom_components/notify/ folder (create it if you don't already have it)
-3.  In your configuration.yaml file, add the following to initialize the components:
+1.  Copy the fcm-android.py file into your /custom_components/notify/ folder (create it if you don't already have it)
+2.  In your configuration.yaml file, add the following to initialize the components:
 
 ```
 notify:    
@@ -13,8 +11,8 @@ notify:
     platform: fcm-android
 ```
 
-4.  Reboot Home Assistant.
-5.  Enter Ariela application, go to settings and enable Firebase notifications
+3.  Reboot Home Assistant.
+4.  Enter Ariela application, go to settings and enable Firebase notifications
 
 ## Usage
 #### Sending the notification
