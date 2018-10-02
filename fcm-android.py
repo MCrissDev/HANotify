@@ -33,6 +33,7 @@ DEPENDENCIES = ['frontend']
 _LOGGER = logging.getLogger(__name__)
 
 REGISTRATIONS_FILE = 'fcm_android_registrations.conf'
+LOVELACE_FILE = 'ui-lovelace.yaml'
 
 SERVER_KEY = 'server_key'
 DEFAULT_SERVER_KEY = 'AIzaSyDOCskVCLoR0_26I45OWjLdMGhtML8XXgk'
@@ -83,7 +84,7 @@ def get_service(hass, config, discovery_info=None):
 
     fcm_pro_server_key = config.get(SERVER_KEY, DEFAULT_PRO_SERVER_KEY)
     fcm_pro_header_key = 'key=' + fcm_pro_server_key
-
+    hass.http.register_view(FCMAndroidLovelaceView(hass.config.path(LOVELACE_FILE)))
     hass.http.register_view(
         FCMAndroidRegistrationView(registrations, json_path))
     hass.http.register_view(FCMAndroidCallbackView(registrations))
@@ -109,6 +110,25 @@ class JSONBytesDecoder(json.JSONEncoder):
         if isinstance(obj, bytes):
             return obj.decode()
         return json.JSONEncoder.default(self, obj)
+
+class FCMAndroidLovelaceView(HomeAssistantView):
+    """Accepts push registrations from android."""
+
+    url = '/api/notify.fcm-android-lovelace'
+    name = 'api:notify.fcm-android-lovelace'
+
+    def __init__(self, lovelace_path):
+        """Init HTML5PushRegistrationView."""
+        self.lovelace_path = lovelace_path
+    async def post(self, request):
+        """Accept the POST request for push registrations from Android."""
+
+        try:
+            data = await request.json()
+        except ValueError:
+            return self.json_message('Invalid JSON', HTTP_BAD_REQUEST)
+
+        return self.json_message(open(self.lovelace_path, 'r').read())
 
 
 class FCMAndroidRegistrationView(HomeAssistantView):
