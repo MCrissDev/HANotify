@@ -322,15 +322,12 @@ class FCMAndroidNotificationService(BaseNotificationService):
                 message_type = ATTR_DATA
 
             if data.get(ATTR_TAG) is not None:
-                if isinstance(data.get(ATTR_TAG), int):
-                    msg_payload[ATTR_TAG] = data.get(ATTR_TAG)
-                    if data.get(ATTR_DISMISS) is not None:
-                        if isinstance(data.get(ATTR_DISMISS), bool):
-                            msg_payload[ATTR_DISMISS] = data.get(ATTR_DISMISS)
-                        else:
-                            _LOGGER.warning('%s is not a valid boolean, false will be used', data.get(ATTR_DISMISS))
-                else:
-                    _LOGGER.warning('%s is not a valid integer, no tag will be used', data.get(ATTR_TAG))
+                msg_payload[ATTR_TAG] = data.get(ATTR_TAG)
+                if data.get(ATTR_DISMISS) is not None:
+                    if isinstance(data.get(ATTR_DISMISS), bool):
+                        msg_payload[ATTR_DISMISS] = data.get(ATTR_DISMISS)
+                    else:
+                        _LOGGER.warning('%s is not a valid boolean, false will be used', data.get(ATTR_DISMISS))
 
         payload[message_type] = msg_payload
 
