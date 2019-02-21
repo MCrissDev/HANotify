@@ -3,7 +3,8 @@ Android actionable notifications for Home Assistant.
 This code is based from https://github.com/Crewski/HANotify
 ## Setup
 1.1.  Copy the fcm-android.py file into your /custom_components/notify/ folder (create it if you don't already have it) (use this step only if you are using Home Assistant version lower then 0.88)
-1.2 If you are using Home Assistant version 0.88 or newer, Copy the fcm-android.py file into your /custom_components/fcm-android/ and rename the script to notify.py
+
+1.2   If you are using Home Assistant version 0.88 or newer, Copy the fcm-android.py file into your /custom_components/fcm-android/ and rename the script to notify.py
 2.  In your configuration.yaml file, add the following to initialize the components:
 
 ```
