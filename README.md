@@ -1,5 +1,5 @@
 # Ariela Client Home Assistant Notify
-Android actionable notifications for Home Assistant.
+Android actionable notifications for Home Assistant + Ariela (https://play.google.com/store/apps/details?id=com.surodev.ariela).
 This code is based from https://github.com/Crewski/HANotify
 ## Setup
 1.1.  Copy the fcm-android.py file into your /custom_components/notify/ folder (create it if you don't already have it) (use this step only if you are using Home Assistant version lower then 0.88)
