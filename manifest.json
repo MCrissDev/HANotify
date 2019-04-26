@@ -1,6 +1,6 @@
 {
-  "domain": "notify",
-  "name": "fcm-android",
+  "domain": "fcm-notify",
+  "name": "Ariela Firebase Notifications",
   "documentation": "https://github.com/MCrissDev/HANotify",
   "requirements": [],
   "dependencies": [],
