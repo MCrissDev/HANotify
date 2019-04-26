@@ -5,7 +5,7 @@ This code is based from https://github.com/Crewski/HANotify
 1.1.  Copy the fcm-android.py file into your /custom_components/notify/ folder (create it if you don't already have it) (use this step only if you are using Home Assistant version lower then 0.88)
 
 1.2   If you are using Home Assistant version 0.88 or newer, Copy the fcm-android.py file into your /custom_components/fcm-android/ and rename the script to notify.py
-### Attention: if you are using Home Assistant version 0.92 or higher, please create a empty file called _\_init\_\_.py in the folder where you placed notify.py
+### Attention: if you are using Home Assistant version 0.92 or higher, please create a empty file called _\_init\_\_.py (or download the one attached in this repository) in the folder where you placed notify.py. Also attach the manifest.json to the same folder as the notify.py is.
 2.  In your configuration.yaml file, add the following to initialize the components:
 
 ```
