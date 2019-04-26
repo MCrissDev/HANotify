@@ -1,0 +1,10 @@
+{
+  "domain": "notify",
+  "name": "fcm-android",
+  "documentation": "https://github.com/MCrissDev/HANotify",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": [
+    "@MCrissDev"
+  ]
+}
